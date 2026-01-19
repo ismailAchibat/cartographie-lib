@@ -15,6 +15,8 @@ public class CheminDeFer {
     }
 
     private List<Voie> voies=new ArrayList<Voie>();
+    private Gare gareDepart;
+    private Gare gareArrivee;
 
     public CheminDeFer(Float distance) {
         this.distance = distance;
@@ -43,16 +45,24 @@ public class CheminDeFer {
 
     public void retirerVoie(Voie voie ){}
 
-
     public List<Voie> getVoies(){
         return Collections.unmodifiableList(voies);
     }
+
+    public Gare getGareDepart() {return gareDepart;}
+    public void setGareDepart(Gare gareDepart) { this.gareDepart = gareDepart;}
+    public Gare getGareArrivee() {return gareArrivee;}
+    public void setGareArrivee(Gare gareArrivee) {this.gareArrivee = gareArrivee;}
+
 
     @Override
     public String toString() {
         return "CheminDeFer{" +
                 "id_chemin=" + id_chemin +
                 ", distance=" + distance +
+                ", voies=" + voies.size() +
+                ", depart=" + (gareDepart != null ? gareDepart.getNom_gare() : "null") +
+                ", arrivee=" + (gareArrivee != null ? gareArrivee.getNom_gare() : "null") +
                 '}';
     }
 }
