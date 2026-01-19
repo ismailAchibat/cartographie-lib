@@ -16,6 +16,8 @@ public class Voie {
         this.vitesse_max = vitesse_max;
     }
 
+    private CheminDeFer cheminDeFer;
+
     public Voie() {
     }
 
@@ -41,6 +43,11 @@ public class Voie {
 
     public void setVitesse_max(Integer vitesse_max) {
         this.vitesse_max = vitesse_max;
+    }
+
+    public CheminDeFer getCheminDeFer() {return cheminDeFer;}
+    public void setCheminDeFer(CheminDeFer cheminDeFer) {
+        this.cheminDeFer = cheminDeFer;
     }
 
     @Override

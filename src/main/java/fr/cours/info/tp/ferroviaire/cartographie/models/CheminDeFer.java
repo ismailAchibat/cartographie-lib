@@ -1,5 +1,10 @@
 package fr.cours.info.tp.ferroviaire.cartographie.models;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 public class CheminDeFer {
     private Integer id_chemin;
     private Float distance;
@@ -8,6 +13,10 @@ public class CheminDeFer {
         this.id_chemin = id_chemin;
         this.distance = distance;
     }
+
+    private List<Voie> voies=new ArrayList<Voie>();
+    private Gare gareDepart;
+    private Gare gareArrivee;
 
     public CheminDeFer(Float distance) {
         this.distance = distance;
@@ -32,11 +41,28 @@ public class CheminDeFer {
         this.distance = distance;
     }
 
+    public void ajouterVoie(Voie voie ){}
+
+    public void retirerVoie(Voie voie ){}
+
+    public List<Voie> getVoies(){
+        return Collections.unmodifiableList(voies);
+    }
+
+    public Gare getGareDepart() {return gareDepart;}
+    public void setGareDepart(Gare gareDepart) { this.gareDepart = gareDepart;}
+    public Gare getGareArrivee() {return gareArrivee;}
+    public void setGareArrivee(Gare gareArrivee) {this.gareArrivee = gareArrivee;}
+
+
     @Override
     public String toString() {
         return "CheminDeFer{" +
                 "id_chemin=" + id_chemin +
                 ", distance=" + distance +
+                ", voies=" + voies.size() +
+                ", depart=" + (gareDepart != null ? gareDepart.getNom_gare() : "null") +
+                ", arrivee=" + (gareArrivee != null ? gareArrivee.getNom_gare() : "null") +
                 '}';
     }
 }
