@@ -13,6 +13,9 @@ public class Gare {
     private String nom_gare;
     private String ville;
     private Integer nb_quai;
+    private Reseau reseau;
+    private final List<CheminDeFer> cheminDeFers = new ArrayList<CheminDeFer>();
+
 
     public Gare() {
     }
@@ -24,13 +27,22 @@ public class Gare {
         this.nb_quai = nb_quai;
     }
 
+
     public Gare(String nom_gare, String ville, Integer nb_quai) {
         this.nom_gare = nom_gare;
         this.ville = ville;
         this.nb_quai = nb_quai;
     }
 
-    private final List<CheminDeFer> cheminDeFers = new ArrayList<CheminDeFer>();
+  
+
+    public Gare(Integer id_gare, String nom_gare, String ville, Integer nb_quai, Reseau reseau) {
+        this.id_gare = id_gare;
+        this.nom_gare = nom_gare;
+        this.ville = ville;
+        this.nb_quai = nb_quai;
+        this.reseau = reseau;
+    }
 
 
     public Integer getId_gare() {
@@ -65,6 +77,14 @@ public class Gare {
         this.nb_quai = nb_quai;
     }
 
+    public Reseau getReseau() {
+        return reseau;
+    }
+
+    public void setReseau(Reseau reseau) {
+        this.reseau = reseau;
+    }
+
     @Override
     public String toString() {
         return "Gare{" +
@@ -72,6 +92,7 @@ public class Gare {
                 ", nom_gare='" + nom_gare + '\'' +
                 ", ville='" + ville + '\'' +
                 ", nb_quai=" + nb_quai +
+                ", reseau=" + reseau +
                 '}';
     }
 }
