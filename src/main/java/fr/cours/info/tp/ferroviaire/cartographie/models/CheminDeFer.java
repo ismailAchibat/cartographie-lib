@@ -8,15 +8,18 @@ import java.util.List;
 public class CheminDeFer {
     private Integer id_chemin;
     private Float distance;
+    private List<Voie> voies=new ArrayList<Voie>();
+    private Gare gareDepart;
+    private Gare gareArrivee;
+    private Reseau reseau;
+
+
 
     public CheminDeFer(Integer id_chemin, Float distance) {
         this.id_chemin = id_chemin;
         this.distance = distance;
     }
 
-    private List<Voie> voies=new ArrayList<Voie>();
-    private Gare gareDepart;
-    private Gare gareArrivee;
 
     public CheminDeFer(Float distance) {
         this.distance = distance;
@@ -54,6 +57,13 @@ public class CheminDeFer {
     public Gare getGareArrivee() {return gareArrivee;}
     public void setGareArrivee(Gare gareArrivee) {this.gareArrivee = gareArrivee;}
 
+    public Reseau getReseau() {
+        return reseau;
+    }
+
+    public void setReseau(Reseau reseau) {
+        this.reseau = reseau;
+    }
 
     @Override
     public String toString() {
@@ -63,6 +73,7 @@ public class CheminDeFer {
                 ", voies=" + voies.size() +
                 ", depart=" + (gareDepart != null ? gareDepart.getNom_gare() : "null") +
                 ", arrivee=" + (gareArrivee != null ? gareArrivee.getNom_gare() : "null") +
+                ", reseau=" + reseau +
                 '}';
     }
 }

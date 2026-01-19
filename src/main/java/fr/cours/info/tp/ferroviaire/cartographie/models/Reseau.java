@@ -6,13 +6,17 @@ public class Reseau {
     private Integer id_reseau;
     private String nom_reseau;
     private List<Gare> gares;
+    private List<CheminDeFer> cheminsDeFer;
 
 
 
-    public Reseau(Integer id_reseau, String nom_reseau, List<Gare> gare) {
+
+
+    public Reseau(Integer id_reseau, String nom_reseau, List<Gare> gare, List<CheminDeFer> cheminsDeFer) {
         this.id_reseau = id_reseau;
         this.nom_reseau = nom_reseau;
         this.gares = gare;
+        this.cheminsDeFer = cheminsDeFer;
     }
 
     public Reseau() {
@@ -46,12 +50,21 @@ public class Reseau {
         this.gares = gares;
     }
 
+    public List<CheminDeFer> getCheminsDeFer() {
+        return cheminsDeFer;
+    }
+
+    public void setCheminsDeFer(List<CheminDeFer> cheminsDeFer) {
+        this.cheminsDeFer = cheminsDeFer;
+    }
+
     @Override
     public String toString() {
         return "Reseau{" +
                 "id_reseau=" + id_reseau +
                 ", nom_reseau='" + nom_reseau + '\'' +
                 ", gardes=" + gares +
+                ", cheminsDeFer=" + cheminsDeFer +
                 '}';
     }
 }
