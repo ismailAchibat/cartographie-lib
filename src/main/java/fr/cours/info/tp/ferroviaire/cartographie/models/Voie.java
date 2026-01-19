@@ -4,6 +4,14 @@ public class Voie {
     private Integer id_voie;
     private String sens;
     private Integer vitesse_max;
+    private CheminDeFer cheminDeFer;
+
+    public Voie(Integer id_voie, String sens, Integer vitesse_max, CheminDeFer cheminDeFer) {
+        this.id_voie = id_voie;
+        this.sens = sens;
+        this.vitesse_max = vitesse_max;
+        this.cheminDeFer = cheminDeFer;
+    }
 
     public Voie(Integer id_voie, String sens, Integer vitesse_max) {
         this.id_voie = id_voie;
@@ -15,8 +23,6 @@ public class Voie {
         this.sens = sens;
         this.vitesse_max = vitesse_max;
     }
-
-    private CheminDeFer cheminDeFer;
 
     public Voie() {
     }
@@ -56,6 +62,7 @@ public class Voie {
                 "id_voie=" + id_voie +
                 ", sens='" + sens + '\'' +
                 ", vitesse_max=" + vitesse_max +
+                ", cheminDeFer=" + cheminDeFer +
                 '}';
     }
 }

@@ -52,15 +52,6 @@ public class Reseau {
         this.cheminsDeFer = cheminsDeFer;
     }
 
-    @Override
-    public String toString() {
-        return "Reseau{" +
-                "id_reseau=" + id_reseau +
-                ", nom_reseau='" + nom_reseau + '\'' +
-                ", gardes=" + gares +
-                ", cheminsDeFer=" + cheminsDeFer +
-                '}';
-    }
     public List<Gare> ajouterGare(Gare gare)
     {
         gares.add(gare);
@@ -102,5 +93,13 @@ public class Reseau {
         {
             System.out.println(chemin);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Reseau{" +
+                "id_reseau=" + id_reseau +
+                ", nom_reseau='" + nom_reseau + '\'' +
+                '}';
     }
 }

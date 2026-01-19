@@ -11,15 +11,20 @@ public class CheminDeFer {
     private List<Voie> voies=new ArrayList<Voie>();
     private Gare gareDepart;
     private Gare gareArrivee;
+    private CheminDeFer cheminPrecedent;
+    private CheminDeFer cheminSuivant;
     private Reseau reseau;
 
-
-
-    public CheminDeFer(Integer id_chemin, Float distance) {
+    public CheminDeFer(Integer id_chemin, Float distance, List<Voie> voies, Gare gareDepart, Gare gareArrivee, CheminDeFer cheminPrecedent, CheminDeFer cheminSuivant, Reseau reseau) {
         this.id_chemin = id_chemin;
         this.distance = distance;
+        this.voies = voies;
+        this.gareDepart = gareDepart;
+        this.gareArrivee = gareArrivee;
+        this.cheminPrecedent = cheminPrecedent;
+        this.cheminSuivant = cheminSuivant;
+        this.reseau = reseau;
     }
-
 
     public CheminDeFer(Float distance) {
         this.distance = distance;
@@ -70,6 +75,26 @@ public class CheminDeFer {
 
     public Reseau getReseau() {
         return reseau;
+    }
+
+    public void setVoies(List<Voie> voies) {
+        this.voies = voies;
+    }
+
+    public CheminDeFer getCheminPrecedent() {
+        return cheminPrecedent;
+    }
+
+    public void setCheminPrecedent(CheminDeFer cheminPrecedent) {
+        this.cheminPrecedent = cheminPrecedent;
+    }
+
+    public CheminDeFer getCheminSuivant() {
+        return cheminSuivant;
+    }
+
+    public void setCheminSuivant(CheminDeFer cheminSuivant) {
+        this.cheminSuivant = cheminSuivant;
     }
 
     public void setReseau(Reseau reseau) {
