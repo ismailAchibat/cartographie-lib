@@ -1,5 +1,8 @@
 package fr.cours.info.tp.ferroviaire.cartographie.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Représente une gare du réseau ferroviaire.
  * @author hend zormati
@@ -26,6 +29,9 @@ public class Gare {
         this.ville = ville;
         this.nb_quai = nb_quai;
     }
+
+    private final List<CheminDeFer> cheminDeFers = new ArrayList<CheminDeFer>();
+
 
     public Integer getId_gare() {
         return id_gare;
