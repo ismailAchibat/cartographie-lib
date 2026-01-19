@@ -44,9 +44,20 @@ public class CheminDeFer {
         this.distance = distance;
     }
 
-    public void ajouterVoie(Voie voie ){}
+    public void ajouterVoie(Voie voie ){
+        if(!voies.contains(voie)){
+            voies.add(voie);
+            voie.setCheminDeFer(this);
+        }
+    }
 
-    public void retirerVoie(Voie voie ){}
+    public void retirerVoie(Voie voie ){
+        if(voie==null)return;
+        if(voies.remove(voie)){
+            voie.setCheminDeFer(null);
+        }
+    }
+
 
     public List<Voie> getVoies(){
         return Collections.unmodifiableList(voies);
