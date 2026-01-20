@@ -95,4 +95,8 @@ public class Gare {
                 ", reseau=" + reseau +
                 '}';
     }
+
+    public void ajouterCheminDeFer(CheminDeFer cheminDeFer) {
+        cheminDeFers.add(cheminDeFer);
+    }
 }
